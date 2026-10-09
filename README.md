@@ -1,4 +1,4 @@
-# ELLEN — cinematic creative portfolio
+# ellenstopplease — cinematic creative portfolio
 
 Next.js App Router, TypeScript, Tailwind CSS 4, and Motion for React. Four editable concept projects, responsive editorial layouts, lazy hover previews, full project pages, reduced-motion support, and local placeholder artwork. All artwork and silent four-second motion clips are demonstration media, not client campaigns.
 
