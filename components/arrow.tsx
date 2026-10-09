@@ -1,0 +1,1 @@
+export function Arrow() { return <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle' }}><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.3" /></svg>; }
