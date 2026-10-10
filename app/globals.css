@@ -123,3 +123,9 @@
 .surreal-film-title{font-size:clamp(20px,2vw,30px);font-weight:400;letter-spacing:-.035em;margin:14px 0}
 .surreal-film-description{color:var(--muted);font-size:14px;line-height:1.6;min-height:68px;margin:0 0 24px}
 @media(max-width:700px){.surreal-film-description{min-height:0}}
+.project-cover-shade{position:absolute;inset:0;background:rgba(0,0,0,.46);pointer-events:none;transition:opacity .6s}
+.project-cover-copy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:24px;text-align:center;pointer-events:none;color:var(--ink);transition:opacity .6s}
+.project-cover-title{font-size:clamp(28px,3vw,50px);font-weight:400;line-height:1.05;letter-spacing:-.045em}
+.project-cover-copy .eyebrow{font-size:8px;color:#dedbd4}
+.project-media.is-playing .project-cover-copy,.project-media.is-playing .project-cover-shade{opacity:0}
+@media(prefers-reduced-motion:reduce){.project-cover-copy,.project-cover-shade{transition:none}}
