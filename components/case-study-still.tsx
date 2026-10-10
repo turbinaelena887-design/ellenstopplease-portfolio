@@ -24,7 +24,7 @@ export async function CaseStudyStill({ still }: { still: FloweryStill }) {
   }
   const ratio = dimensions ? `${dimensions.width} / ${dimensions.height}` : still.placeholderRatio;
   return <Reveal className="case-still-reveal"><figure className="case-still" style={{ aspectRatio: ratio }}>
-    {dimensions && still.src ? <Image src={still.src} alt={still.alt} fill sizes="(max-width: 700px) 88vw, 92vw" loading="lazy" style={{ objectFit: 'cover', objectPosition: still.focalPoint }} /> : <div className="case-still-placeholder"><span>{still.label}</span><span className="case-still-note">FILM STILL / COMING SOON</span></div>}
+    {dimensions && still.src ? <Image src={still.src} alt={still.alt} fill sizes="(max-width: 700px) 88vw, 30vw" loading="lazy" style={{ objectFit: 'contain', objectPosition: still.focalPoint }} /> : <div className="case-still-placeholder"><span>{still.label}</span><span className="case-still-note">FILM STILL / COMING SOON</span></div>}
     {dimensions && <figcaption className="sr-only">{still.label}</figcaption>}
   </figure></Reveal>;
 }

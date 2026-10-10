@@ -17,7 +17,7 @@ Open http://localhost:3000 on your own machine. In a cloud editor, use its port 
 
 Edit `data/projects.ts`. Each entry has `slug`, `title`, `category`, `year`, `description`, `cover`, optional `previewVideo`, optional `fullVideo`, and `gallery` (an array of `{ src, alt }`). Put files in `public/media/` and reference them as `/media/your-file.jpg` or `/media/your-film.mp4`. Do not prefix paths with `public`.
 
-Use JPEG/WebP covers and browser-compatible H.264 MP4 videos. Keep hover clips short, muted, and compressed; they only load after mouse hover and do not autoplay on touch devices or with reduced motion. Full films load on user request, use native controls, and preserve their original ratio. Set `aspectRatio` to the original video dimensions (for example, `9 / 16` for portrait or `16 / 9` for landscape). Grid covers and previews keep that ratio on desktop and mobile. Covers with different proportions crop to fill the frame. Project films autoplay muted on opening; use the player volume control to enable sound. Next Image optimizes raster cover and gallery images. Add descriptive gallery alt text. For optional galleries, width and height can be refined in the project template if media have very different dimensions.
+Use JPEG/WebP covers and browser-compatible H.264 MP4 videos. Keep hover clips short, muted, and compressed; they only load after mouse hover and do not autoplay on touch devices or with reduced motion. Full films load on user request, use native controls, and preserve their original ratio. Set `aspectRatio` to the original video dimensions (for example, `9 / 16` for portrait or `16 / 9` for landscape). Project films keep that ratio; portfolio covers and hover previews use the original horizontal editorial frames. Covers with different proportions crop to fill the frame. Project films autoplay muted on opening; use the player volume control to enable sound. Next Image optimizes raster cover and gallery images. Add descriptive gallery alt text. For optional galleries, width and height can be refined in the project template if media have very different dimensions.
 
 Add a project by copying an entry with a unique slug. The homepage and static project routes use the same list. Replace the placeholder email `hello@example.com` in `app/page.tsx`, and edit the identity, biography, and metadata in `components/navigation.tsx`, `app/page.tsx`, and `app/layout.tsx` before public deployment. Replace the demonstration-concept labels when publishing real work. No form backend, account, or secret is required.
 
@@ -39,14 +39,14 @@ Use the existing checkout at `/workspace/ellenstopplease-portfolio`; no addition
 
 ## FLOWERY case study images
 
-Edit `data/flowery-case-study.ts`, under `floweryCaseStudy.gallery`. All five slots start with `src: null` and render a labeled frame. Upload a still into `public/media/`, then change only its `src` to `/media/your-file.jpg`. Keep the filename and extension exact. Local image dimensions are read automatically before rendering, so the real image retains its original aspect ratio and reserves its space before loading. Missing/unreadable image files keep the intentional placeholder. Images load lazily below the film. `focalPoint` is an optional alignment setting, such as `50% 35%`; covers use `object-fit: cover` within the image's natural proportions.
+Edit `data/flowery-case-study.ts`, under `floweryCaseStudy.gallery`. All five slots start with `src: null` and render a labeled frame. Upload a still into `public/media/`, then change only its `src` to `/media/your-file.jpg`. Keep the filename and extension exact. Local image dimensions are read automatically. All five stills appear together in The Process, in compact 3:4 viewing frames; object-fit: contain preserves each original image without cropping. The reserved frames prevent shifts during loading. Missing/unreadable image files keep the intentional placeholder. Images load lazily below the film. `focalPoint` is an optional alignment setting, such as `50% 35%`; stills use `object-fit: contain` to keep the full image visible.
 
 | Key | Location | Empty frame |
 | --- | --- | --- |
-| `floweryStill01` | After The Concept | 16:9 |
-| `floweryStill02` | After My Role, left | 3:4 |
-| `floweryStill03` | After My Role, right | 3:4 |
-| `floweryStill04` | After The Process | 16:9 |
-| `floweryStill05` | Before The Result | 16:9 |
+| `floweryStill01` | The Process, image 01 | 3:4 |
+| `floweryStill02` | The Process, image 02 | 3:4 |
+| `floweryStill03` | The Process, image 03 | 3:4 |
+| `floweryStill04` | The Process, image 04 | 3:4 |
+| `floweryStill05` | The Process, image 05 | 3:4 |
 
-The paired stills stack on mobile. Copy and tool descriptions are in the same data file. The existing movie and portfolio cover remain in `data/projects.ts`; this case study reuses those assets. It presents FLOWERY as an independent spec commercial, not commissioned work. Other project pages retain their original template.
+The five stills appear in one row on wide desktops, three columns on smaller desktops, and two columns on mobile. Project pages place the video on the left and summary on the right on desktop; these stack on mobile. Players fit the available viewport height and retain native fullscreen controls. Copy and tool descriptions are in the same data file. The existing movie and portfolio cover remain in `data/projects.ts`; this case study reuses those assets. It presents FLOWERY as an independent spec commercial, not commissioned work. Other project pages retain their original template.
