@@ -1,3 +1,4 @@
+import { surrealCaseStudy } from '@/data/surreal-case-study';
 import { SurrealProject } from '@/components/surreal-project';
 import { VishniCaseStudy } from '@/components/vishni-case-study';
 import { vishniCaseStudy } from '@/data/vishni-case-study';
@@ -16,7 +17,7 @@ import { Reveal } from '@/components/reveal';
 export function generateStaticParams() { return projects.map(p => ({ slug: p.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const p = projects.find(p => p.slug === slug);
-  return { title: p?.slug === 'vishni' ? 'VISHNI — Impossible Not to Look.' : p?.slug === 'la-dolce-vita' ? 'LA DOLCE VITA — A Cinematic Wine Story' : p?.slug === 'flowery' ? 'FLOWERY — A Cinematic Floral Story' : p?.title ?? 'Project not found', description: p?.slug === 'vishni' ? vishniCaseStudy.description : p?.slug === 'la-dolce-vita' ? italianWineCaseStudy.description : p?.slug === 'flowery' ? floweryCaseStudy.description : p?.description, openGraph: p?.cover ? { images: [p.cover] } : undefined };
+  return { title: p?.slug === 'surreal-visions' ? 'SURREAL — Beyond the Ordinary.' : p?.slug === 'vishni' ? 'VISHNI — Impossible Not to Look.' : p?.slug === 'la-dolce-vita' ? 'LA DOLCE VITA — A Cinematic Wine Story' : p?.slug === 'flowery' ? 'FLOWERY — A Cinematic Floral Story' : p?.title ?? 'Project not found', description: p?.slug === 'surreal-visions' ? surrealCaseStudy.description : p?.slug === 'vishni' ? vishniCaseStudy.description : p?.slug === 'la-dolce-vita' ? italianWineCaseStudy.description : p?.slug === 'flowery' ? floweryCaseStudy.description : p?.description, openGraph: p?.cover ? { images: [p.cover] } : undefined };
 }
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; if (slug === 'rikky-hype') permanentRedirect('/projects/la-dolce-vita'); const index = projects.findIndex(p => p.slug === slug); if (index < 0) notFound();

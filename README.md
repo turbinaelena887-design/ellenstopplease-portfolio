@@ -64,3 +64,7 @@ All wine case copy and five gallery paths live in `data/italian-wine-case-study.
 | `italianWineStill03` | The Process — wine ritual |
 | `italianWineStill04` | The Process — product details |
 | `italianWineStill05` | The Process — cinematic atmosphere |
+
+## SURREAL
+
+The experimental collection is at `/projects/surreal-visions`. Edit its case text in `data/surreal-case-study.ts`. All three film sources, original aspect ratios, titles, and subtitles are centralized in `data/surreal-films.ts`, under `surrealFilm01`, `surrealFilm02`, and `surrealFilm03`. Replace the corresponding files in `public/media/` or change each `src` path. Update `aspectRatio` when a replacement has different dimensions. Players load on demand and pause the other collection players when started; there is no simultaneous autoplay or photo gallery.
