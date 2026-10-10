@@ -1,3 +1,4 @@
+import { contact } from '@/data/contact';
 import { About } from '@/components/about';
 import { Services } from '@/components/services';
 import { Arrow } from '@/components/arrow';
@@ -9,6 +10,6 @@ export default function Home() {
     <section id="work" className="work" aria-labelledby="work-title"><div className="section-label"><h2 id="work-title">SELECTED WORK</h2><span>2026 — ONGOING</span><span className="work-count">({String(projects.length).padStart(2, '0')})</span></div><div className="project-grid">{projects.map((p, i) => <ProjectCard key={p.slug} project={p} index={i} />)}</div><p className="demo-note">SELECTED FILMS & CONCEPTS</p></section>
     <Services />
     <About />
-    <section id="contact" className="contact"><Reveal><div className="eyebrow"><span className="status-dot" /> OPEN TO CREATIVE COLLABORATIONS</div><h2>LET’S MAKE<br /><span className="muted">THE UNEXPECTED.</span></h2><a href="mailto:hello@example.com" className="contact-link">START A CONVERSATION <span aria-hidden><Arrow /></span></a><p className="demo-note">CONTACT ADDRESS IS A PLACEHOLDER — REPLACE BEFORE PUBLISHING.</p></Reveal></section>
+    <section id="contact" className="contact" aria-labelledby="contact-title"><Reveal><div className="eyebrow"><span className="status-dot" /> OPEN TO CREATIVE COLLABORATIONS</div><h2 id="contact-title">LET’S MAKE<br /><span className="muted">THE UNEXPECTED.</span></h2><a href={`mailto:${contact.email}`} className="contact-link">START A CONVERSATION <span aria-hidden><Arrow /></span></a><dl className="contact-details"><div><dt>EMAIL</dt><dd><a href={`mailto:${contact.email}`}>{contact.email}</a></dd></div><div><dt>INSTAGRAM</dt><dd><a href={contact.instagram} target="_blank" rel="noopener noreferrer" aria-label="ellenstopplease on Instagram (opens in a new tab)">{contact.instagramHandle} <Arrow /></a></dd></div><div><dt>BASED IN</dt><dd>{contact.location}</dd></div></dl></Reveal></section>
   </main>;
 }

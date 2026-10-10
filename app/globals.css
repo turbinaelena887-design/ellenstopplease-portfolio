@@ -129,3 +129,11 @@
 .project-cover-copy .eyebrow{font-size:8px;color:#dedbd4}
 .project-media.is-playing .project-cover-copy,.project-media.is-playing .project-cover-shade{opacity:0}
 @media(prefers-reduced-motion:reduce){.project-cover-copy,.project-cover-shade{transition:none}}
+.contact-details{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;border-top:1px solid var(--line);margin:52px 0 0;padding-top:28px}
+.contact-details dt{font-size:9px;letter-spacing:1.2px;color:var(--muted);margin-bottom:12px}
+.contact-details dd{margin:0;font-size:clamp(14px,1.4vw,20px);line-height:1.6;overflow-wrap:anywhere}
+.contact-details a{transition:opacity .2s}
+.contact-details a:hover{opacity:.7}
+.contact-details svg{margin-left:8px;font-size:14px}
+@media(max-width:700px){.contact-details{grid-template-columns:1fr;gap:26px;margin-top:36px}}
+@media(prefers-reduced-motion:reduce){.contact-details a{transition:none}}
