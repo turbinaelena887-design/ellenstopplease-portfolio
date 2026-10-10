@@ -50,3 +50,17 @@ Edit `data/flowery-case-study.ts`, under `floweryCaseStudy.gallery`. All five sl
 | `floweryStill05` | The Process, image 05 | 3:4 |
 
 The five stills appear in one row on wide desktops, three columns on smaller desktops, and two columns on mobile. Project pages place the video on the left and summary on the right on desktop; these stack on mobile. Players fit the available viewport height and retain native fullscreen controls. Copy and tool descriptions are in the same data file. The existing movie and portfolio cover remain in `data/projects.ts`; this case study reuses those assets. It presents FLOWERY as an independent spec commercial, not commissioned work. Other project pages retain their original template.
+
+## LA DOLCE VITA
+
+The second project replaces RIKKY HYPE at `/projects/la-dolce-vita`. Old `/projects/rikky-hype` links redirect to it. Original RIKKY HYPE media files remain untouched. The wine film and cover have not yet been supplied; the page reserves the same compact 9:16 player space as FLOWERY with an intentional neutral placeholder. Add the film, hover clip, and cover paths in `data/projects.ts` once their files are uploaded. Do not reuse the unrelated RIKKY HYPE demonstration film as wine footage.
+
+All wine case copy and five gallery paths live in `data/italian-wine-case-study.ts`, under `italianWineCaseStudy.gallery`. Change `src: null` to a local `/media/your-frame.jpg` path and optionally update `alt` and `focalPoint`. The shared image component detects local dimensions and uses placeholders for missing files.
+
+| Slot | Position |
+| --- | --- |
+| `italianWineStill01` | After The Concept — Italian estate |
+| `italianWineStill02` | After My Role — human connection |
+| `italianWineStill03` | Beside image 02 — wine ritual |
+| `italianWineStill04` | After The Process — product details |
+| `italianWineStill05` | Before The Result — cinematic atmosphere |

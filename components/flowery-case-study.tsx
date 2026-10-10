@@ -6,10 +6,10 @@ import { Arrow } from './arrow';
 import { Reveal } from './reveal';
 import { CaseStudyStill } from './case-study-still';
 
-function Chapter({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
+export function Chapter({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
   return <section className="case-chapter" aria-labelledby={`chapter-${number}`}><Reveal className="case-chapter-inner"><h2 id={`chapter-${number}`}><span>{number} /</span> {title}</h2><div className="case-chapter-copy">{children}</div></Reveal></section>;
 }
-function Paragraphs({ items }: { items: string[] }) { return items.map(p => <p key={p}>{p}</p>); }
+export function Paragraphs({ items }: { items: string[] }) { return items.map(p => <p key={p}>{p}</p>); }
 
 export function FloweryCaseStudy({ project, next }: { project: Project; next: Project }) {
   return <main id="main" className="project-page flowery-case">
