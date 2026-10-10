@@ -47,10 +47,10 @@ export const floweryCaseStudy = {
   result: 'A fully AI-produced cinematic spec commercial that combines emotional storytelling, realistic visuals, and a distinct brand atmosphere.',
   resultStatement: '100% independently conceived, directed, produced, and edited.',
   gallery: {
-    floweryStill01: { src: null, alt: 'FLOWERY cinematic still', label: 'Gallery Image 01 — Cinematic Still', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
-    floweryStill02: { src: null, alt: 'FLOWERY visual storytelling, first character', label: 'Gallery Image 02 — Visual Storytelling', placeholderRatio: '3 / 4', focalPoint: '50% 50%' },
-    floweryStill03: { src: null, alt: 'FLOWERY visual storytelling, second character', label: 'Gallery Image 03 — Visual Storytelling', placeholderRatio: '3 / 4', focalPoint: '50% 50%' },
-    floweryStill04: { src: null, alt: 'FLOWERY visual development', label: 'Gallery Image 04 — Visual Development', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
-    floweryStill05: { src: null, alt: 'FLOWERY final film still', label: 'Gallery Image 05 — Final Film Still', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
+    floweryStill01: { src: '/media/flowery-process-01.png', alt: 'FLOWERY ribbon design and bouquet details', label: 'Image 01 — Ribbon Design', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
+    floweryStill02: { src: '/media/flowery-process-02.png', alt: 'Male character reference sheet', label: 'Image 02 — Character Development', placeholderRatio: '3 / 4', focalPoint: '50% 50%' },
+    floweryStill03: { src: '/media/flowery-process-03.png', alt: 'Female character reference sheet', label: 'Image 03 — Character Development', placeholderRatio: '3 / 4', focalPoint: '50% 50%' },
+    floweryStill04: { src: '/media/flowery-process-04.png', alt: 'Sunlit street environment for FLOWERY', label: 'Image 04 — Environment Development', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
+    floweryStill05: { src: '/media/flowery-process-05.png', alt: 'Building facade and lighting reference for FLOWERY', label: 'Image 05 — Lighting & Atmosphere', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
   } satisfies Record<string, FloweryStill>,
 };

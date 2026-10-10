@@ -278,5 +278,15 @@ export const ukrainian: Record<string, string> = {
   "VISHNI — Impossible Not to Look.": "VISHNI — Неможливо не дивитися.",
   "SURREAL — Beyond the Ordinary.": "SURREAL — За межами звичного.",
   "Project not found": "Проєкт не знайдено",
-  "\"When All Eyes Are on You.\"": "\"Коли всі погляди спрямовані на тебе.\""
+  "\"When All Eyes Are on You.\"": "\"Коли всі погляди спрямовані на тебе.\"",
+  "FLOWERY ribbon design and bouquet details": "Дизайн стрічки FLOWERY та деталі букета",
+  "Image 01 — Ribbon Design": "Кадр 01 — Дизайн стрічки",
+  "Male character reference sheet": "Референси чоловічого персонажа",
+  "Image 02 — Character Development": "Кадр 02 — Розробка персонажа",
+  "Female character reference sheet": "Референси жіночого персонажа",
+  "Image 03 — Character Development": "Кадр 03 — Розробка персонажа",
+  "Sunlit street environment for FLOWERY": "Залита сонцем вулиця для FLOWERY",
+  "Image 04 — Environment Development": "Кадр 04 — Розробка середовища",
+  "Building facade and lighting reference for FLOWERY": "Референс фасаду та освітлення для FLOWERY",
+  "Image 05 — Lighting & Atmosphere": "Кадр 05 — Освітлення й атмосфера"
 };
