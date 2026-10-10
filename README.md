@@ -53,9 +53,9 @@ The five stills appear in one row on wide desktops, three columns on smaller des
 
 ## LA DOLCE VITA
 
-The second project replaces RIKKY HYPE at `/projects/la-dolce-vita`. Old `/projects/rikky-hype` links redirect to it. Original RIKKY HYPE media files remain untouched. The wine film and cover have not yet been supplied; the page reserves the same compact 9:16 player space as FLOWERY with an intentional neutral placeholder. Add the film, hover clip, and cover paths in `data/projects.ts` once their files are uploaded. Do not reuse the unrelated RIKKY HYPE demonstration film as wine footage.
+The second project replaces RIKKY HYPE at `/projects/la-dolce-vita`. Old `/projects/rikky-hype` links redirect to it. Original RIKKY HYPE media files remain untouched. The supplied 27.4-second wine film, muted hover clip, and five original stills are included in `public/media/la-dolce-vita-*`. The full film preserves its 9:16 format and audio; playback starts muted with native sound and fullscreen controls. The cover remains an intentional neutral placeholder until a separate cover is provided. Set its `cover` path in `data/projects.ts` to replace it.
 
-All wine case copy and five gallery paths live in `data/italian-wine-case-study.ts`, under `italianWineCaseStudy.gallery`. Change `src: null` to a local `/media/your-frame.jpg` path and optionally update `alt` and `focalPoint`. The shared image component detects local dimensions and uses placeholders for missing files.
+All wine case copy and five gallery paths live in `data/italian-wine-case-study.ts`, under `italianWineCaseStudy.gallery`. Replace the existing `src` with a local `/media/your-frame.jpg` path and optionally update `alt` and `focalPoint`. The shared image component detects local dimensions and uses placeholders for missing files.
 
 | Slot | Position |
 | --- | --- |

@@ -34,10 +34,10 @@ export const italianWineCaseStudy = {
   ],
   resultStatement: '100% independently conceived, directed, produced, and edited.',
   gallery: {
-    italianWineStill01: { src: null, alt: 'Italian estate and vineyard landscape', label: 'Image 01 — The Italian Estate', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
-    italianWineStill02: { src: null, alt: 'Italian lifestyle and human connection', label: 'Image 02 — Human Connection', placeholderRatio: '3 / 4', focalPoint: '50% 50%' },
-    italianWineStill03: { src: null, alt: 'The wine tasting ritual', label: 'Image 03 — The Wine Ritual', placeholderRatio: '3 / 4', focalPoint: '50% 50%' },
-    italianWineStill04: { src: null, alt: 'Wine bottle label, condensation, and glass reflections', label: 'Image 04 — Product Details', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
-    italianWineStill05: { src: null, alt: 'Final Italian wine film atmosphere', label: 'Image 05 — Cinematic Atmosphere', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
+    italianWineStill01: { src: '/media/la-dolce-vita-still-01.png', alt: 'A woman reading beneath an olive tree in the Italian countryside', label: 'Image 01 — The Italian Estate', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
+    italianWineStill02: { src: '/media/la-dolce-vita-still-02.png', alt: 'Friends sharing a sunlit meal beside an Italian lake', label: 'Image 02 — Human Connection', placeholderRatio: '3 / 4', focalPoint: '50% 50%' },
+    italianWineStill03: { src: '/media/la-dolce-vita-still-03.png', alt: 'White wine being poured into a glass in warm sunlight', label: 'Image 03 — The Wine Ritual', placeholderRatio: '3 / 4', focalPoint: '50% 50%' },
+    italianWineStill04: { src: '/media/la-dolce-vita-still-04.png', alt: 'Wine bottle label, condensation, and glass reflections', label: 'Image 04 — Product Details', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
+    italianWineStill05: { src: '/media/la-dolce-vita-still-05.png', alt: 'A wine bottle and glass on a sunlit stone table beside an Italian lake', label: 'Image 05 — Cinematic Atmosphere', placeholderRatio: '16 / 9', focalPoint: '50% 50%' },
   } satisfies Record<string, FloweryStill>,
 };

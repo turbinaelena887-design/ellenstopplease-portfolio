@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import type { CSSProperties } from 'react';
 import path from 'node:path';
 import sharp from 'sharp';
 import type { FloweryStill } from '@/data/flowery-case-study';
@@ -23,7 +24,8 @@ export async function CaseStudyStill({ still }: { still: FloweryStill }) {
     }
   }
   const ratio = dimensions ? `${dimensions.width} / ${dimensions.height}` : still.placeholderRatio;
-  return <Reveal className="case-still-reveal"><figure className="case-still" style={{ aspectRatio: ratio }}>
+  const [ratioWidth, ratioHeight = 1] = ratio.split('/').map(Number);
+  return <Reveal className="case-still-reveal"><figure className="case-still" style={{ aspectRatio: ratio, '--still-ratio': ratioWidth / ratioHeight } as CSSProperties}>
     {dimensions && still.src ? <Image src={still.src} alt={still.alt} fill sizes="(max-width: 700px) 88vw, 30vw" loading="lazy" style={{ objectFit: 'contain', objectPosition: still.focalPoint }} /> : <div className="case-still-placeholder"><span>{still.label}</span><span className="case-still-note">FILM STILL / COMING SOON</span></div>}
     {dimensions && <figcaption className="sr-only">{still.label}</figcaption>}
   </figure></Reveal>;
