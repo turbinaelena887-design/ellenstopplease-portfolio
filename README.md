@@ -36,3 +36,17 @@ Push the project to your GitHub repository, import it into Vercel, choose Next.j
 ## Cloud environment
 
 Use the existing checkout at `/workspace/ellenstopplease-portfolio`; no additional worktree is needed. Dependency installation is reproducible with the committed package lock. Servers must be started again after environment restoration; running processes are not part of the saved snapshot.
+
+## FLOWERY case study images
+
+Edit `data/flowery-case-study.ts`, under `floweryCaseStudy.gallery`. All five slots start with `src: null` and render a labeled frame. Upload a still into `public/media/`, then change only its `src` to `/media/your-file.jpg`. Keep the filename and extension exact. Local image dimensions are read automatically before rendering, so the real image retains its original aspect ratio and reserves its space before loading. Missing/unreadable image files keep the intentional placeholder. Images load lazily below the film. `focalPoint` is an optional alignment setting, such as `50% 35%`; covers use `object-fit: cover` within the image's natural proportions.
+
+| Key | Location | Empty frame |
+| --- | --- | --- |
+| `floweryStill01` | After The Concept | 16:9 |
+| `floweryStill02` | After My Role, left | 3:4 |
+| `floweryStill03` | After My Role, right | 3:4 |
+| `floweryStill04` | After The Process | 16:9 |
+| `floweryStill05` | Before The Result | 16:9 |
+
+The paired stills stack on mobile. Copy and tool descriptions are in the same data file. The existing movie and portfolio cover remain in `data/projects.ts`; this case study reuses those assets. It presents FLOWERY as an independent spec commercial, not commissioned work. Other project pages retain their original template.
