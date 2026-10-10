@@ -59,8 +59,8 @@ All wine case copy and five gallery paths live in `data/italian-wine-case-study.
 
 | Slot | Position |
 | --- | --- |
-| `italianWineStill01` | After The Concept — Italian estate |
-| `italianWineStill02` | After My Role — human connection |
-| `italianWineStill03` | Beside image 02 — wine ritual |
-| `italianWineStill04` | After The Process — product details |
-| `italianWineStill05` | Before The Result — cinematic atmosphere |
+| `italianWineStill01` | The Process — Italian estate |
+| `italianWineStill02` | The Process — human connection |
+| `italianWineStill03` | The Process — wine ritual |
+| `italianWineStill04` | The Process — product details |
+| `italianWineStill05` | The Process — cinematic atmosphere |
