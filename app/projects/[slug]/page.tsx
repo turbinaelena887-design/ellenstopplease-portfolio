@@ -1,3 +1,4 @@
+import { SurrealProject } from '@/components/surreal-project';
 import { VishniCaseStudy } from '@/components/vishni-case-study';
 import { vishniCaseStudy } from '@/data/vishni-case-study';
 import { ItalianWineCaseStudy } from '@/components/italian-wine-case-study';
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; if (slug === 'rikky-hype') permanentRedirect('/projects/la-dolce-vita'); const index = projects.findIndex(p => p.slug === slug); if (index < 0) notFound();
   const p = projects[index]; const next = projects[(index + 1) % projects.length];
+  if (p.slug === 'surreal-visions') return <SurrealProject project={p} next={next} />;
   if (p.slug === 'vishni') return <VishniCaseStudy project={p} next={next} />;
   if (p.slug === 'la-dolce-vita') return <ItalianWineCaseStudy project={p} next={next} />;
   if (p.slug === 'flowery') return <FloweryCaseStudy project={p} next={next} />;

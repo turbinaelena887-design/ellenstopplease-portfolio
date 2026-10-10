@@ -113,3 +113,7 @@
 .vishni-recognition-statement{font-size:clamp(28px,4vw,52px);letter-spacing:-.035em;line-height:1.1;margin:22px 0}
 .vishni-recognition p:last-child{color:var(--muted);max-width:620px;line-height:1.7}
 @media(max-width:700px){.vishni-case #vishni-title{font-size:18vw}.vishni-recognition{padding-top:30px}}
+.surreal-film-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:36px 0 60px;align-items:start}
+.surreal-film-row .project-film{margin-inline:auto}
+.surreal-film-number{color:var(--muted);margin:18px 0;text-align:center}
+@media(max-width:700px){.surreal-film-row{grid-template-columns:1fr;gap:32px;margin-top:24px}}
