@@ -1,3 +1,6 @@
+import { cookies } from 'next/headers';
+import { translate } from '@/data/localization';
+import { Text } from '@/components/language';
 import { surrealCaseStudy } from '@/data/surreal-case-study';
 import { SurrealProject } from '@/components/surreal-project';
 import { VishniCaseStudy } from '@/components/vishni-case-study';
@@ -17,7 +20,9 @@ import { Reveal } from '@/components/reveal';
 export function generateStaticParams() { return projects.map(p => ({ slug: p.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const p = projects.find(p => p.slug === slug);
-  return { title: p?.slug === 'surreal-visions' ? 'SURREAL — Beyond the Ordinary.' : p?.slug === 'vishni' ? 'VISHNI — Impossible Not to Look.' : p?.slug === 'la-dolce-vita' ? 'LA DOLCE VITA — A Cinematic Wine Story' : p?.slug === 'flowery' ? 'FLOWERY — A Cinematic Floral Story' : p?.title ?? 'Project not found', description: p?.slug === 'surreal-visions' ? surrealCaseStudy.description : p?.slug === 'vishni' ? vishniCaseStudy.description : p?.slug === 'la-dolce-vita' ? italianWineCaseStudy.description : p?.slug === 'flowery' ? floweryCaseStudy.description : p?.description, openGraph: p?.cover ? { images: [p.cover] } : undefined };
+  const locale = (await cookies()).get('portfolio-language')?.value === 'uk' ? 'uk' : 'en';
+  const metadata = { title: p?.slug === 'surreal-visions' ? 'SURREAL — Beyond the Ordinary.' : p?.slug === 'vishni' ? 'VISHNI — Impossible Not to Look.' : p?.slug === 'la-dolce-vita' ? 'LA DOLCE VITA — A Cinematic Wine Story' : p?.slug === 'flowery' ? 'FLOWERY — A Cinematic Floral Story' : p?.title ?? 'Project not found', description: p?.slug === 'surreal-visions' ? surrealCaseStudy.description : p?.slug === 'vishni' ? vishniCaseStudy.description : p?.slug === 'la-dolce-vita' ? italianWineCaseStudy.description : p?.slug === 'flowery' ? floweryCaseStudy.description : p?.description, openGraph: p?.cover ? { images: [p.cover] } : undefined };
+  return { ...metadata, title: translate(metadata.title, locale), description: metadata.description && translate(metadata.description, locale) };
 }
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; if (slug === 'rikky-hype') permanentRedirect('/projects/la-dolce-vita'); const index = projects.findIndex(p => p.slug === slug); if (index < 0) notFound();
@@ -26,12 +31,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   if (p.slug === 'vishni') return <VishniCaseStudy project={p} next={next} />;
   if (p.slug === 'la-dolce-vita') return <ItalianWineCaseStudy project={p} next={next} />;
   if (p.slug === 'flowery') return <FloweryCaseStudy project={p} next={next} />;
-  return <main id="main" className="project-page"><Reveal><Link href="/#work" className="eyebrow back-link">← ALL PROJECTS</Link></Reveal>
+  return <main id="main" className="project-page"><Reveal><Link href="/#work" className="eyebrow back-link"><Text>← ALL PROJECTS</Text></Link></Reveal>
     <div className="project-presentation">
       <ProjectFilm project={p} />
-      <Reveal className="project-summary"><div className="project-heading"><h1>{p.title}</h1><p>{p.category}<br />{p.year}</p></div><div className="project-description"><h2>ABOUT THE PROJECT</h2><p>{p.description}</p><span className="eyebrow">{p.isPlaceholder === false ? p.category.toUpperCase() : 'DEMONSTRATION CONCEPT'}</span></div></Reveal>
+      <Reveal className="project-summary"><div className="project-heading"><h1><Text>{p.title}</Text></h1><p><Text>{p.category}</Text><br /><Text>{p.year}</Text></p></div><div className="project-description"><h2><Text>ABOUT THE PROJECT</Text></h2><p><Text>{p.description}</Text></p><span className="eyebrow"><Text>{p.isPlaceholder === false ? p.category.toUpperCase() : 'DEMONSTRATION CONCEPT'}</Text></span></div></Reveal>
     </div>
     <div className="gallery">{p.gallery.map((img, i) => <Image key={`${img.src}-${i}`} src={img.src} alt={img.alt} width={1600} height={1000} sizes="100vw" style={{ width: '100%', height: 'auto' }} />)}</div>
-    <Link href={`/projects/${next.slug}`} className="next-project"><span className="eyebrow">NEXT PROJECT</span><span>{next.title} <Arrow /></span></Link>
+    <Link href={`/projects/${next.slug}`} className="next-project"><span className="eyebrow"><Text>NEXT PROJECT</Text></span><span><Text>{next.title}</Text> <Arrow /></span></Link>
   </main>;
 }

@@ -68,3 +68,7 @@ All wine case copy and five gallery paths live in `data/italian-wine-case-study.
 ## SURREAL
 
 The experimental collection is at `/projects/surreal-visions`. Edit its case text in `data/surreal-case-study.ts`. All three film sources, original aspect ratios, titles, and subtitles are centralized in `data/surreal-films.ts`, under `surrealFilm01`, `surrealFilm02`, and `surrealFilm03`. Replace the corresponding files in `public/media/` or change each `src` path. Update `aspectRatio` when a replacement has different dimensions. Players load on demand and pause the other collection players when started; there is no simultaneous autoplay or photo gallery.
+
+## Website languages
+
+The first visit shows a keyboard-accessible Ukrainian / English language selector. The header always includes UK / EN controls. A one-year `portfolio-language` preference cookie remembers the selection in this browser. The document language, navigation, case text, service copy, image descriptions, and page metadata follow that selection. English is the default before a choice; project, brand, and tool names remain unchanged. Ukrainian translations live in `data/translations.ts`; English copy remains in the existing data and components. When editing English copy, update the matching translation key too. No media files are changed by language selection.

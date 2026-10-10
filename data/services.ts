@@ -5,7 +5,7 @@ export const services = [
   },
   {
     title: 'CREATIVE DIRECTION & CONCEPT DEVELOPMENT',
-    description: 'Original creative concepts developed from the first spark of an idea to a complete visual direction. Including concept development, moodboards, storytelling, scripts, and storyboards.',
+    description: 'Original creative concepts developed from the first spark of an idea to a complete visual direction. Services include concept development, moodboards, storytelling, scripts, and storyboards.',
   },
   {
     title: 'AI FASHION & BEAUTY CAMPAIGNS',
