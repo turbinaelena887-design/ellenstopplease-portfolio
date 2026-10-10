@@ -1,3 +1,5 @@
+import { VishniCaseStudy } from '@/components/vishni-case-study';
+import { vishniCaseStudy } from '@/data/vishni-case-study';
 import { ItalianWineCaseStudy } from '@/components/italian-wine-case-study';
 import { italianWineCaseStudy } from '@/data/italian-wine-case-study';
 import { permanentRedirect } from 'next/navigation';
@@ -13,11 +15,12 @@ import { Reveal } from '@/components/reveal';
 export function generateStaticParams() { return projects.map(p => ({ slug: p.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const p = projects.find(p => p.slug === slug);
-  return { title: p?.slug === 'la-dolce-vita' ? 'LA DOLCE VITA — A Cinematic Wine Story' : p?.slug === 'flowery' ? 'FLOWERY — A Cinematic Floral Story' : p?.title ?? 'Project not found', description: p?.slug === 'la-dolce-vita' ? italianWineCaseStudy.description : p?.slug === 'flowery' ? floweryCaseStudy.description : p?.description, openGraph: p?.cover ? { images: [p.cover] } : undefined };
+  return { title: p?.slug === 'vishni' ? 'VISHNI — Impossible Not to Look.' : p?.slug === 'la-dolce-vita' ? 'LA DOLCE VITA — A Cinematic Wine Story' : p?.slug === 'flowery' ? 'FLOWERY — A Cinematic Floral Story' : p?.title ?? 'Project not found', description: p?.slug === 'vishni' ? vishniCaseStudy.description : p?.slug === 'la-dolce-vita' ? italianWineCaseStudy.description : p?.slug === 'flowery' ? floweryCaseStudy.description : p?.description, openGraph: p?.cover ? { images: [p.cover] } : undefined };
 }
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; if (slug === 'rikky-hype') permanentRedirect('/projects/la-dolce-vita'); const index = projects.findIndex(p => p.slug === slug); if (index < 0) notFound();
   const p = projects[index]; const next = projects[(index + 1) % projects.length];
+  if (p.slug === 'vishni') return <VishniCaseStudy project={p} next={next} />;
   if (p.slug === 'la-dolce-vita') return <ItalianWineCaseStudy project={p} next={next} />;
   if (p.slug === 'flowery') return <FloweryCaseStudy project={p} next={next} />;
   return <main id="main" className="project-page"><Reveal><Link href="/#work" className="eyebrow back-link">← ALL PROJECTS</Link></Reveal>
